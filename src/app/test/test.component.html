@@ -1,0 +1,21 @@
+<h3>This is a test component</h3>
+
+{{name}}
+
+
+    <input type="button" value="click Me" (click)="clickme()"/>
+    <br /> You clicked :  {{clicks}} times
+
+    <input type="button" value="5x"  (click)="clickme5x()"/>
+    {{clicks5x}}
+    <br /> {{'Message: ' + GetSample()}}
+    <br /> {{20*5 + 10}} <br />
+    <input type="text" [(ngModel)]= "owner" />
+    <input type="button" (click)="toggleMe()" value= "toggle View" />
+    <div *ngIf ="showText">
+        <br /> The owner value from Class:  {{owner}}
+    </div>
+
+
+
+    <app-authorize></app-authorize>
