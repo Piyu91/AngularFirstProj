@@ -18,6 +18,7 @@ export class TestComponent implements OnInit {
  clicks5x:number = 0;
  owner:string = "Priyanka";
  showText:boolean = true;
+ childValue:string;
 
   public clickme():void{
     this.clicks++;
@@ -31,5 +32,8 @@ export class TestComponent implements OnInit {
   }
   public toggleMe():void{
     this.showText= !this.showText;
+  }
+  onChildChecked(event: string):void{
+    this.childValue = event;
   }
 }

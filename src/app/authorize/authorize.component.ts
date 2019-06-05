@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-authorize',
@@ -11,10 +11,16 @@ export class AuthorizeComponent implements OnInit {
 
   ngOnInit() {
   }
+  @Input() passed:string;
+
+  @Output() checkerCLicked: EventEmitter<string> = new EventEmitter<string>();
 
   textBoxVal:string="";
   checkVal:string="Priyanka";
   checkBool:boolean = false;
+  names:string[] = ["suku","piyu","Sukanta"];
+  //backgrd:string = "backgrd";
+  displayMessage:string = "This is a sample message to display";
 
   public checkNow(){
     if(this.checkVal == this.textBoxVal){
@@ -22,6 +28,7 @@ export class AuthorizeComponent implements OnInit {
     }else {
       this.checkBool = false;
     }
+    this.checkerCLicked.emit(`The value in textbox is : ${this.textBoxVal}`);
   }
 
 }
